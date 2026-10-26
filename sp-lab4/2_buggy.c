@@ -18,7 +18,7 @@ User *create_user_list(int count)
     }
 
     // Заповнюємо дані користувачів
-    for (int i = 0; i <= count; i++)
+    for (int i = 0; i < count; i++)
     {
         users[i].id = i + 1;
         snprintf(users[i].name, sizeof(users[i].name), "User_%d", i + 1);
@@ -36,9 +36,9 @@ void process_users()
         return;
     }
     printf("Створено користувачів: %d\n", count);
+    printf("Перший користувач: ID=%d, Name=%s\n", users[0].id, users[0].name);
 
     free(users);
-    printf("Перший користувач: ID=%d, Name=%s\n", users[0].id, users[0].name);
 }
 
 int main()
